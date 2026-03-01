@@ -1,0 +1,12 @@
+name: Hello
+#runs on trriger
+on: 
+push: 
+branches:
+- main
+jobs: 
+  greet:
+    runs-on: ubuntu-latest
+    steps:
+      - echo "Hello $USER"
+
