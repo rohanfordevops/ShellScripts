@@ -3,7 +3,7 @@ name: Hello
 on: 
   push: 
     branches:
-- main
+            - main
 jobs: 
   greet:
     runs-on: ubuntu-latest
