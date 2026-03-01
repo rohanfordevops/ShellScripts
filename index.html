@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Your Name | Portfolio</title>
+
+<!-- Google Font -->
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+<style>
+:root{
+    --primary: #6C63FF;
+    --secondary: #00C9A7;
+    --glass-bg: rgba(255, 255, 255, 0.1);
+    --glass-border: rgba(255, 255, 255, 0.2);
+    --text: #ffffff;
+}
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body{
+    min-height:100vh;
+    background: linear-gradient(135deg,#0f2027,#203a43,#2c5364);
+    overflow-x:hidden;
+    color:var(--text);
+}
+
+/* Animated background blobs */
+body::before, body::after{
+    content:"";
+    position:absolute;
+    width:500px;
+    height:500px;
+    border-radius:50%;
+    filter:blur(120px);
+    opacity:0.6;
+    z-index:-1;
+}
+
+body::before{
+    background:var(--primary);
+    top:-150px;
+    left:-150px;
+    animation: float 12s ease-in-out infinite alternate;
+}
+
+body::after{
+    background:var(--secondary);
+    bottom:-150px;
+    right:-150px;
+    animation: float 14s ease-in-out infinite alternate-reverse;
+}
+
+@keyframes float{
+    from{transform:translateY(0px) translateX(0px);}
+    to{transform:translateY(80px) translateX(60px);}
+}
+
+/* Glass Card */
+.glass{
+    background:var(--glass-bg);
+    border:1px solid var(--glass-border);
+    backdrop-filter:blur(20px);
+    -webkit-backdrop-filter:blur(20px);
+    border-radius:20px;
+    box-shadow:0 8px 32px rgba(0,0,0,0.3);
+}
+
+/* Navbar */
+nav{
+    position:fixed;
+    width:100%;
+    padding:20px 10%;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    z-index:1000;
+}
+
+nav a{
+    text-decoration:none;
+    color:var(--text);
+    margin-left:30px;
+    font-weight:500;
+    position:relative;
+}
+
+nav a::after{
+    content:"";
+    position:absolute;
+    left:0;
+    bottom:-5px;
+    width:0%;
+    height:2px;
+    background:var(--secondary);
+    transition:0.3s;
+}
+
+nav a:hover::after{
+    width:100%;
+}
+
+/* Hero Section */
+.hero{
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    min-height:100vh;
+    padding:0 10%;
+    text-align:center;
+}
+
+.hero-content{
+    padding:50px;
+    max-width:700px;
+}
+
+.hero h1{
+    font-size:3rem;
+    font-weight:700;
+    margin-bottom:20px;
+}
+
+.hero span{
+    color:var(--secondary);
+}
+
+.hero p{
+    font-size:1.1rem;
+    opacity:0.8;
+    margin-bottom:30px;
+}
+
+.btn{
+    padding:12px 30px;
+    border-radius:50px;
+    border:none;
+    cursor:pointer;
+    font-weight:600;
+    transition:0.4s;
+    background:linear-gradient(45deg,var(--primary),var(--secondary));
+    color:white;
+}
+
+.btn:hover{
+    transform:translateY(-5px);
+    box-shadow:0 10px 25px rgba(0,0,0,0.4);
+}
+
+/* Sections */
+section{
+    padding:100px 10%;
+}
+
+.section-title{
+    font-size:2rem;
+    margin-bottom:50px;
+    text-align:center;
+}
+
+/* Projects */
+.projects{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+    gap:30px;
+}
+
+.project-card{
+    padding:30px;
+    transition:0.4s;
+}
+
+.project-card:hover{
+    transform:translateY(-10px) scale(1.03);
+    box-shadow:0 15px 35px rgba(0,0,0,0.4);
+}
+
+.project-card h3{
+    margin-bottom:15px;
+}
+
+/* Skills */
+.skills{
+    display:flex;
+    flex-wrap:wrap;
+    justify-content:center;
+    gap:20px;
+}
+
+.skill{
+    padding:12px 25px;
+    border-radius:50px;
+    font-weight:500;
+    transition:0.3s;
+}
+
+.skill:hover{
+    transform:scale(1.1);
+    background:rgba(255,255,255,0.2);
+}
+
+/* Footer */
+footer{
+    text-align:center;
+    padding:40px 10%;
+    opacity:0.6;
+}
+</style>
+</head>
+
+<body>
+
+<nav class="glass">
+    <h2>YourName</h2>
+    <div>
+        <a href="#about">About</a>
+        <a href="#projects">Projects</a>
+        <a href="#skills">Skills</a>
+        <a href="#contact">Contact</a>
+    </div>
+</nav>
+
+<section class="hero">
+    <div class="glass hero-content">
+        <h1>Hello, I'm <span>Your Name</span></h1>
+        <p>
+            A passionate UI/Web Designer creating modern, interactive,
+            and high-performing digital experiences with clean design
+            and smooth user interactions.
+        </p>
+        <button class="btn">View My Work</button>
+    </div>
+</section>
+
+<section id="about">
+    <h2 class="section-title">About Me</h2>
+    <div class="glass" style="padding:40px;text-align:center;">
+        <p>
+            I specialize in designing elegant, conversion-focused websites
+            with modern UI principles. I combine creativity with usability
+            to craft digital products that stand out.
+        </p>
+    </div>
+</section>
+
+<section id="projects">
+    <h2 class="section-title">Projects</h2>
+    <div class="projects">
+        <div class="glass project-card">
+            <h3>Project One</h3>
+            <p>Modern responsive website with smooth animations.</p>
+        </div>
+        <div class="glass project-card">
+            <h3>Project Two</h3>
+            <p>High-converting landing page with bold visuals.</p>
+        </div>
+        <div class="glass project-card">
+            <h3>Project Three</h3>
+            <p>Creative portfolio interface with immersive UX.</p>
+        </div>
+    </div>
+</section>
+
+<section id="skills">
+    <h2 class="section-title">Skills</h2>
+    <div class="skills">
+        <div class="glass skill">HTML5</div>
+        <div class="glass skill">CSS3</div>
+        <div class="glass skill">JavaScript</div>
+        <div class="glass skill">UI/UX Design</div>
+        <div class="glass skill">Responsive Design</div>
+        <div class="glass skill">Figma</div>
+    </div>
+</section>
+
+<section id="contact">
+    <h2 class="section-title">Let's Work Together</h2>
+    <div class="glass" style="padding:40px;text-align:center;">
+        <p>Interested in collaborating or building something amazing?</p>
+        <br>
+        <button class="btn">Get In Touch</button>
+    </div>
+</section>
+
+<footer>
+    © 2026 Your Name — Designed with passion.
+</footer>
+
+</body>
+</html>
