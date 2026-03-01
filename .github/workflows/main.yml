@@ -8,5 +8,5 @@ jobs:
   greet:
     runs-on: ubuntu-latest
     steps:
-      - echo "Hello $USER"
+      - echo 'Hello $USER'
 
